@@ -3,67 +3,21 @@
 
 📦 service-scheduling-system/
 ```
-├── 📁 src/
-│   ├── 📁 modules/
-│   │   ├── 📁 appointments/         # Bounded Context: Appointment Management
-│   │   │   ├── 📁 domain/           # Core domain: Entities, Value Objects, Aggregates
-│   │   │   │   ├── Appointment.ts
-│   │   │   │   ├── AppointmentStatus.ts
-│   │   │   │   └── exceptions/
-│   │   │   ├── 📁 application/      # Use Cases (Application Services)
-│   │   │   │   ├── CreateAppointment.ts
-│   │   │   │   ├── CancelAppointment.ts
-│   │   │   │   └── GetUpcomingAppointments.ts
-│   │   │   ├── 📁 infra/            # Infrastructure: DB, frameworks, external tools
-│   │   │   │   ├── repositories/
-│   │   │   │   │   └── TypeORMAppointmentRepository.ts
-│   │   │   │   └── persistence/
-│   │   │   │       └── AppointmentSchema.ts
-│   │   │   ├── 📁 interfaces/       # Controllers, routes, DTOs
-│   │   │   │   ├── http/
-│   │   │   │   │   ├── AppointmentController.ts
-│   │   │   │   │   └── routes.ts
-│   │   │   │   └── dtos/
-│   │   │   │       ├── CreateAppointmentDTO.ts
-│   │   │   │       └── CancelAppointmentDTO.ts
-│   │   │   └── 📁 mappers/          # Maps between domain and persistence or DTO
-│   │   │       └── AppointmentMapper.ts
-│   │   ├── 📁 availability/         # Bounded Context: Provider Availability
-│   │   │   └── ...
-│   │   ├── 📁 users/                # Bounded Context: Clients & Providers
-│   │   │   └── ...
-│   │   └── 📁 services/             # Bounded Context: Service catalog
-│   │       └── ...
-│   ├── 📁 shared/                   # Shared Kernel: Cross-cutting utilities
-│   │   ├── 📁 domain/
-│   │   │   ├── BaseEntity.ts
-│   │   │   ├── ValueObject.ts
-│   │   │   └── Identifier.ts
-│   │   ├── 📁 application/
-│   │   │   └── BaseUseCase.ts
-│   │   ├── 📁 infra/
-│   │   │   ├── logger/
-│   │   │   ├── http/
-│   │   │   └── orm/
-│   │   └── 📁 utils/
-│   │       └── date/
-│   ├── 📁 config/                   # App configuration (env, constants)
-│   ├── 📁 main/                     # Entry point, app startup
-│   │   ├── server.ts
-│   │   └── routes.ts
-│   └── 📁 container/                # Dependency Injection config
-│       └── index.ts
-├── 📁 tests/                        # Unit and integration tests
-│   ├── appointments/
-│   └── shared/
-├── 📁 docs/                         # Documentation (user stories, glossary, diagrams)
-│   ├── USER_STORIES_AND_USE_CASES.md
-│   └── DOMAIN_GLOSSARY.md
-├── .env
-├── .eslintrc.js
-├── tsconfig.json
+├── DEVLOG.md
+├── doc
+│   ├── 1-scope.md
+│   ├── 2-stackholders.md
+│   ├── 3-user-stories-and-cases.md
+│   ├── 4-non-functional-requirements.md
+│   ├── 5-domain-glossary.md
+│   └── 6-structure.md
+├── package-lock.json
 ├── package.json
-└── README.md
+├── src
+│   └── modules
+│       └── users
+│           └── users
+└── tsconfig.json
 ```
 
 ## ✅ How This Structure Aligns with DDD and SOLID
