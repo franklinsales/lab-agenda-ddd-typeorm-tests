@@ -26,3 +26,8 @@ compilerOptions{
 },
 "include": ["src"],
 "exclude": ["node_modules", "dist"]
+
+Add scripts to package.json:
+"build": "tsc",
+"start": "node dist/index.js",
+"dev": "tsc && node dist/index.js",
