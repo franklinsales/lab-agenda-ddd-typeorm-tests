@@ -7,3 +7,6 @@
 
 First init npm with default settings:  
 `npm init -y`
+
+Install the first dependencies
+npm install reflect-metadata sqlite3 typeorm express
