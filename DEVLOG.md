@@ -13,3 +13,16 @@ Install the dependencies
 
 Install the DEV dependencies
 `npm install -D typescript`
+
+Init Typescript Cofing File
+`npx tsc --init`
+
+Update few tsconfig.json settings:
+compilerOptions{
+  ...
+  "target": "ES2020",
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true,
+},
+"include": ["src"],
+"exclude": ["node_modules", "dist"]
