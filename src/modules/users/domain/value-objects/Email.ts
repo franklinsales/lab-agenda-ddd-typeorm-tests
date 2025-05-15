@@ -1,3 +1,4 @@
+//src/modules/users/domain/value-objects/Email.ts
 export class Email {
 
   // This is a private property that holds the value of the email address.
