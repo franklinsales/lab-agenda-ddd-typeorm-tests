@@ -11,8 +11,11 @@ A Value-Object is a Pattern particulary within context of Domain-Driven Design (
 [Value Object](https://martinfowler.com/bliki/ValueObject.html)
 
 ### Tests
-Install jest
+Install Jest
 npm install --save-dev jest ts-jest @types/jest @types/node
+
+Init Jest
+npx ts-jest config:init
 
 ## Wed 14 May 2025
 
