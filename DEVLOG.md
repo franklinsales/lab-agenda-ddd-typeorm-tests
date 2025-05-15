@@ -57,4 +57,13 @@ The User pure Entity `src/modules/users/domain/entities/User.ts` was created.
 
 After the in the infrastructure layer was created the UserEntity `src/modules/users/infrastructure/typeorm/entities/UserEntity.ts` entity typeorm.
 
+But to unify these two layers is necessary to use the Data Mapper Pattern:
+[Data Mapper Pattern](https://martinfowler.com/eaaCatalog/dataMapper.html)
+
+"A layer of mappers that moves data between objects and a database while keeping them independent of each other and the mapper itself." - Martin Fowler
+
+Objects and databases have different mechanisms for structuring and handling data, so for your system not to become a tightly coupled system, you need to isolate the Domain Entity from your Infrastructure Entity
+and use the Data Mapper Pattern to connect both in your application.
+
+Here we have our first Data Mapper implementation connecting User (Domain) and UserEntity`src/modules/users/infrastructure/typeorm/mappers/UserMapper.ts`
 
