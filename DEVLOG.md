@@ -67,3 +67,9 @@ and use the Data Mapper Pattern to connect both in your application.
 
 Here we have our first Data Mapper implementation connecting User (Domain) and UserEntity`src/modules/users/infrastructure/typeorm/mappers/UserMapper.ts`
 
+## Wed 15 May 2025
+
+The Value-Object Email was created `src/modules/users/domain/value-objects/Email.ts`
+
+A Value-Object is a Pattern particulary within context of Domain-Driven Design (DDD).
+[Value Object](https://martinfowler.com/bliki/ValueObject.html)
