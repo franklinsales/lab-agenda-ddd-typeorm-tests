@@ -1,7 +1,7 @@
 # Devlog
 ## Here, I will document the actions and decisions taken during the development process. It's like a changelog, but for the development process.
 
-## Wed 15 May 2025
+## Thu 15 May 2025
 
 ### Coding
 
@@ -11,6 +11,7 @@ A Value-Object is a Pattern particulary within context of Domain-Driven Design (
 [Value Object](https://martinfowler.com/bliki/ValueObject.html)
 
 ### Tests
+
 Install Jest
 npm install --save-dev jest ts-jest @types/jest @types/node
 
@@ -20,6 +21,14 @@ npx ts-jest config:init
 Create the First Test 
 Test the Users(domain) Email value-object
 src/modules/users/domain/value-objects/Email.test.ts
+
+### Coding
+
+Create the IUserRepository `src/modules/users/domain/repositories/IUserRepository.ts`
+Create the UserRepository `src/modules/users/infrastructure/typeorm/repositories/UserRepository.ts`
+Here we have used the (Repository design pattern)https://martinfowler.com/eaaCatalog/dataMapper.html
+Which mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.
+
 
 ## Wed 14 May 2025
 
