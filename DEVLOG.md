@@ -29,6 +29,11 @@ Create the UserRepository `src/modules/users/infrastructure/typeorm/repositories
 Here we have used the (Repository design pattern)https://martinfowler.com/eaaCatalog/dataMapper.html
 Which mediates between the domain and data mapping layers using a collection-like interface for accessing domain objects.
 
+Add the first use-case: Create User
+src/modules/users/application/use-cases/CreateUserUseCase.ts
+
+This will create a user: `ICreateUser.dto -> User -> UserEntity (TypeORM) -> User (with ID)`
+
 
 ## Wed 14 May 2025
 

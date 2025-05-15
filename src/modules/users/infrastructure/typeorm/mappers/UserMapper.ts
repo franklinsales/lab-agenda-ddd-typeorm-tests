@@ -1,6 +1,7 @@
-// modules/users/infrastructure/typeorm/mappers/UserMapper.ts
+// src/modules/users/infrastructure/typeorm/mappers/UserMapper.ts
 import { User } from '@/modules/users/domain/entities/User';
 import { UserEntity } from '../entities/UserEntity';
+import { Email } from '@/modules/users/domain/value-objects/Email';
 
 // This class is responsible for mapping between the User domain entity and the UserEntity persistence entity.
 // It converts the UserEntity from the database to the User domain entity and vice versa.
@@ -10,15 +11,24 @@ import { UserEntity } from '../entities/UserEntity';
 export class UserMapper {
 
   static toDomain(entity: UserEntity): User {
-    return new User(entity.id, entity.name, entity.email, entity.role as 'client' | 'provider');
+    const emailValueObject = new Email(entity.email);
+    const user = User.create(entity.name, emailValueObject, entity.role as 'client' | 'provider');
+    user.setId(entity.id);
+    return user;
   }
 
   static toPersistence(user: User): UserEntity {
-    const entity = new UserEntity();
-    entity.id = user.id;
-    entity.name = user.name;
-    entity.email = user.email;
-    entity.role = user.role;
-    return entity;
+    const emailValueObject = user.email;
+    const userEntity = new UserEntity();
+
+    const id = user.getId();
+    if (id) {
+      userEntity.id = id;
+    }
+    
+    userEntity.name = user.name;
+    userEntity.email = emailValueObject.getValue();
+    userEntity.role = user.role;
+    return userEntity;
   }
 }
