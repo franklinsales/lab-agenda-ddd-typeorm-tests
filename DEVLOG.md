@@ -18,14 +18,18 @@ Init Typescript Cofing File
 `npx tsc --init`
 
 Update few tsconfig.json settings:
-compilerOptions{
-  ...
-  "target": "ES2020",
-  "experimentalDecorators": true,
-  "emitDecoratorMetadata": true,
-},
-"include": ["src"],
-"exclude": ["node_modules", "dist"]
+```json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+    //...
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
+```
 
 Add scripts to package.json:
 "build": "tsc",
@@ -48,5 +52,9 @@ For now, I believe I will have the following modules:
 
 The first thing to do is create the pure domain entities first - not TypeORM or any other ORM.
 **It's necessary to keep the domain independent of infrastructure.**
+
+The User pure Entity `src/modules/users/domain/entities/User.ts` was created.
+
+After the in the infrastructure layer was created the UserEntity `src/modules/users/infrastructure/typeorm/entities/UserEntity.ts` entity typeorm.
 
 
