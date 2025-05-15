@@ -1,7 +1,18 @@
 # Devlog
 ## Here, I will document the actions and decisions taken during the development process. It's like a changelog, but for the development process.
 
-**>> Insert New Log Here <<**
+## Wed 15 May 2025
+
+### Coding
+
+The Value-Object Email was created `src/modules/users/domain/value-objects/Email.ts`
+
+A Value-Object is a Pattern particulary within context of Domain-Driven Design (DDD).
+[Value Object](https://martinfowler.com/bliki/ValueObject.html)
+
+### Tests
+Install jest
+npm install --save-dev jest ts-jest @types/jest @types/node
 
 ## Wed 14 May 2025
 
@@ -66,10 +77,3 @@ Objects and databases have different mechanisms for structuring and handling dat
 and use the Data Mapper Pattern to connect both in your application.
 
 Here we have our first Data Mapper implementation connecting User (Domain) and UserEntity`src/modules/users/infrastructure/typeorm/mappers/UserMapper.ts`
-
-## Wed 15 May 2025
-
-The Value-Object Email was created `src/modules/users/domain/value-objects/Email.ts`
-
-A Value-Object is a Pattern particulary within context of Domain-Driven Design (DDD).
-[Value Object](https://martinfowler.com/bliki/ValueObject.html)
