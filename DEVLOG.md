@@ -17,6 +17,10 @@ npm install --save-dev jest ts-jest @types/jest @types/node
 Init Jest
 npx ts-jest config:init
 
+Create the First Test 
+Test the Users(domain) Email value-object
+src/modules/users/domain/value-objects/Email.test.ts
+
 ## Wed 14 May 2025
 
 First init npm with default settings:  
