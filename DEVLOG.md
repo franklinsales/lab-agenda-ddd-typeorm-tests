@@ -1,6 +1,17 @@
 # Devlog
 ## Here, I will document the actions and decisions taken during the development process. It's like a changelog, but for the development process.
 
+## Sun 18 May 2025
+
+### Tests
+Creating Unit Tests for:
+src/modules/users/application/use-cases/CreateUserUseCase.ts
+
+The test will be placed in the same directory as CreateUserUseCase.ts
+The IUserRepository will be mocked, because it should not access the database.
+
+So the test was created: src/modules/users/application/use-cases/CreateUserUseCase.test.ts
+
 ## Thu 15 May 2025
 
 ### Coding
@@ -21,6 +32,9 @@ npx ts-jest config:init
 Create the First Test 
 Test the Users(domain) Email value-object
 src/modules/users/domain/value-objects/Email.test.ts
+
+How to run the tests?
+Just `npm run test` and all tests will be run.
 
 ### Coding
 
