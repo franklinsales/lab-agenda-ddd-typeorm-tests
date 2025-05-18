@@ -55,7 +55,9 @@ Update few tsconfig.json settings:
   "compilerOptions": {
     "target": "ES2020",
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "module": "esnext",                              
+    "moduleResolution": "bundler",
     //...
   },
   "include": ["src"],
