@@ -1,16 +1,50 @@
 # Devlog
 ## Here, I will document the actions and decisions taken during the development process. It's like a changelog, but for the development process.
 
+**>> Add updates here <<**
+
+---
+
 ## Sun 18 May 2025
 
 ### Tests
-Creating Unit Tests for:
-src/modules/users/application/use-cases/CreateUserUseCase.ts
+Creating Unit Tests for:  
+`src/modules/users/application/use-cases/CreateUserUseCase.ts`
 
 The test will be placed in the same directory as CreateUserUseCase.ts
 The IUserRepository will be mocked, because it should not access the database.
 
-So the test was created: src/modules/users/application/use-cases/CreateUserUseCase.test.ts
+So the test was created:  
+`src/modules/users/application/use-cases/CreateUserUseCase.test.ts`
+
+### Coding
+Create the CreateUserController:  
+`src/modules/users/interface/http/controllers/CreateUserController.ts`
+
+See, here an `interface adapters` was created. Why `interface adapters` and not `presentation layer`?
+
+In the: Domain-Driven Design Distilled:
+"The user interface belongs in the Presentation Layer. It’s responsible for translating input into Application Layer requests and for presenting results from the Application Layer to the user."
+
+Here, we are dealing with a client/server architecture, i.e. the server is a standalone application with no visual presentation. That's why we decided to use the `interface adapter layer`. There are some frameworks where the visual presentation can be managed by some UI engine in the server application. In these cases, I think it makes sense to use the `presentation layer`.
+
+"Clean Architecture" — Robert C. Martin (Uncle Bob)
+"The interface adapters layer contains adapters that convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as the Database or the Web."
+
+Therefore, **I PREFER** to use th folder structure: `interface/controllers`.
+
+
+### Tests
+Install the supertest: A package that provides a high-level abstraction for testing HTTP, while still allowing us to drop down to the lower-level API provided by the superagent package.
+`npm install --save-dev supertest @types/supertest`
+
+Add the setupTestServer -> src/test/setupTestServer.ts
+This is a equivalent to the interface layer.
+
+Create CreateUserController.test.ts file:  
+`src/modules/users/interface/http/controllers/CreateUserController.test.ts`
+
+
 
 ## Thu 15 May 2025
 
