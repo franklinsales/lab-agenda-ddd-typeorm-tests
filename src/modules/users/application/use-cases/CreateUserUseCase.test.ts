@@ -4,10 +4,12 @@ import { IUserRepository } from "../../domain/repositories/IUserRepository"
 import { Email } from "../../domain/value-objects/Email";
 import { CreateUserUseCase } from "./CreateUserUseCase";
 
+// Initial setup for the test suite
 describe('CreateUserUseCase', () => { // Test suite for CreateUserUseCase
   let mockRepository: IUserRepository; // Here we define a variable for the mock repository. This will be use to simulate the behavior of the actual repository in our tests.
   let createUserUseCase: CreateUserUseCase;
 
+  // Define a beforeEach function to set up the test environment before each test case
   beforeEach(() => {
     mockRepository = {
       createUser: jest.fn()
